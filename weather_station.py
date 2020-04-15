@@ -104,7 +104,7 @@ temp_probe = ds18b20_therm.DS18B20()
 db = database.weather_database()
 
 print('Begin weather measurment at {} min intervals...'.format(interval/60))
-print('{} {:^6} {:^5} {:^6} {:^6} {:^6} {:^6} {:^4} {:^6} {:^7} {:^6} {:^5} {:^6}'.format(time.strftime("%m/%d/%y, %H:%M:%S"),'wdir','wspd','wgst','wchl','hidx','dewp','rnfl','humd','pres','temp','gtmp','cpu'))
+print('{} {:^6} {:^5} {:^6} {:^6} {:^6} {:^6} {:^4} {:^6} {:^7} {:^6} {:^5} {:^6}'.format(time.strftime("%m/%d/%y, %H:%M:%S"),'wdir','wspd','wgst','wchl','hidx','dewp','rnfl','humd','press','temp','gtmp','cpu'))
 
 # Loop to measure wind speed and report at 5-minute intervals
 while True:
