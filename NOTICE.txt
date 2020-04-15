@@ -1,0 +1,9 @@
+'''
+This folder includes software developed by 
+The Raspberry Pi Foundation
+https://github.com/RaspberryPiFoundation/weather-station
+and Adafruit Industries
+https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code
+https://github.com/adafruit/Adafruit_Blinka
+https://github.com/adafruit/Adafruit_CircuitPython_BME280
+'''
