@@ -75,18 +75,20 @@ if __name__ == "__main__":
     ambient_tempc = round(ambient_tempc,2)
     humidity = round(humidity,2)
     hidxc = heat_index(ambient_tempc,humidity)
-##    print(avg_val(hidxc), avg_val(hidxf), c2f(avg_val(hidxc)))
-    print('barometer: %s hPa, %s inHg\n\
-pressure @ sea level: %s hPa %s inHg\n\
-elevation: %s ft\n\
-temp: %s c, %s F\n\
-humidity: %s %%\n\
-heat index: %s C %s F \n\
-dewpoint: %s c, %s F' % (pressure_hPa,phg,
-slp,round(pressure_inHg(slp),2),
-elevation_ft,
-ambient_tempc,c2f(ambient_tempc),
-humidity,
-hidxc,c2f(hidxc),
-dpc,c2f(dpc)))
+    # print(avg_val(hidxc), avg_val(hidxf), c2f(avg_val(hidxc)))
+    output = 'barometer: {} hPa, {} inHg\n'
+    output += 'pressure @ sea level: {} hPa {} inHg\n'
+    output += 'elevation: {} ft\n'
+    output += u'temp: {}\u00B0C, {}\u00B0F\n'
+    output += 'humidity: {}% RH\n'
+    output += 'heat index: {}\u00B0C {}\u00B0F \n'
+    output += 'dewpoint: {}\u00B0C, {}\u00B0F'
+
+    print(output.format(pressure_hPa,phg,
+        slp,round(pressure_inHg(slp),2),
+        elevation_ft,
+        ambient_tempc,c2f(ambient_tempc),
+        humidity,
+        hidxc,c2f(hidxc),
+        dpc,c2f(dpc)))
 

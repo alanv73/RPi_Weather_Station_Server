@@ -3,6 +3,8 @@
 This module includes software developed by 
 The Raspberry Pi Foundation
 https://github.com/RaspberryPiFoundation/weather-station
+Copyright (c) 2012-2013 Limor Fried, Kevin Townsend and Mikey Sklar for Adafruit Industries. All rights reserved.
+Copyright (c) 2017, Raspberry Pi Foundation. All rights reserved.
 '''
 
 # ground temperature
