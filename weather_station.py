@@ -105,8 +105,11 @@ temp_probe = ds18b20_therm.DS18B20()
 
 db = database.weather_database()
 
+# print message that data acquisition has begun
 print('Begin weather measurment at {} min intervals...'.format(interval/60))
-print('{} {:^6} {:^5} {:^6} {:^6} {:^6} {:^6} {:^4} {:^6} {:^7} {:^6} {:^5} {:^6}'.format(time.strftime("%m/%d/%y, %H:%M:%S"),'wdir','wspd','wgst','wchl','hidx','dewp','rnfl','humd','press','temp','gtmp','cpu'))
+
+# print headers for subsequent console data
+# print('{} {:^6} {:^5} {:^6} {:^6} {:^6} {:^6} {:^4} {:^6} {:^7} {:^6} {:^5} {:^6}'.format(time.strftime("%m/%d/%y, %H:%M:%S"),'wdir','wspd','wgst','wchl','hidx','dewp','rnfl','humd','press','temp','gtmp','cpu'))
 
 # Loop to measure wind speed and report at 5-minute intervals
 while True:
@@ -141,7 +144,10 @@ while True:
     dewpt_c = weather_math.dewPoint_c(humidity, ambient_temp) # deg Celsius
     rpi_temp = round(cpu_temp(), 2) # RPi cpu temp in Fahrenheit
     
+##  print data to console
 ##  w_dir w_spd w_gust wchill heatidx dewpt rain hum prsr a_temp g_temp time
-    print('{} {:^6} {:^5} {:^6} {:^6} {:^6} {:^6} {:^4} {:^6} {:^7} {:^6} {:^5} {:^6}'.format(time.strftime("%m/%d/%y, %H:%M:%S"), wind_average, wind_speed, wind_gust, wchill, c2f(hidx), c2f(dewpt_c), round(mm2in(rainfall), 2), humidity, pressure, c2f(ambient_temp), c2f(ground_temp), rpi_temp))
+    # print('{} {:^6} {:^5} {:^6} {:^6} {:^6} {:^6} {:^4} {:^6} {:^7} {:^6} {:^5} {:^6}'.format(time.strftime("%m/%d/%y, %H:%M:%S"), wind_average, wind_speed, wind_gust, wchill, c2f(hidx), c2f(dewpt_c), round(mm2in(rainfall), 2), humidity, pressure, c2f(ambient_temp), c2f(ground_temp), rpi_temp))
+
+##  save data to db
     db.insert(c2f(ambient_temp), c2f(ground_temp), 0, pressure, humidity, wind_average, wind_speed, wind_gust, wchill, c2f(hidx), c2f(dewpt_c), round(mm2in(rainfall), 2), rpi_temp)#, time.strftime("%Y-%m-%d %H:%M:%S"))
     
