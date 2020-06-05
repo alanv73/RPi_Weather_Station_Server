@@ -3,3 +3,4 @@
 /unit_test_integration/README.md
 *.log
 core
+credentials.mysql
