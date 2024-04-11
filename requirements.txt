@@ -6,7 +6,7 @@ colorzero==1.1
 cryptography==42.0.4
 entrypoints==0.3
 gpiozero==1.5.1
-idna==2.6
+idna==3.7
 keyring==17.1.1
 keyrings.alt==3.1.1
 mysqlclient==1.4.6
